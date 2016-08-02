@@ -27,7 +27,13 @@ public class MainController {
     @RequestMapping(value="/radiotherapy", method = RequestMethod.GET)
     public String radiotherapy(Model model) {
         System.out.print("ccc");
-        return "chart";
+        return "bar";
+    }
+
+    @RequestMapping(value="/test", method = RequestMethod.GET)
+    public String test(Model model) {
+        System.out.print("ddd");
+        return "hello";
     }
 
 }
