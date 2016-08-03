@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca18bec4-cb09-4aeb-95ad-518035a0cbff" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\workspace\hospProject\src\main\resources\templates\hello.txt" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\hospProject\target\classes\static\css\js\Chart.Bar.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\hospProject\target\classes\static\css\js\getData.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\workspace\hospProject\target\classes\templates\hello.txt" afterPath="" />
-      <change type="MOVED" beforePath="C:\workspace\hospProject\src\main\resources\static\css\js\Chart.Bar.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/Chart.Bar.js" />
-      <change type="MOVED" beforePath="C:\workspace\hospProject\src\main\resources\static\css\js\getData.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/getData.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/homepage/dataVals.java" />
+      <change type="MODIFICATION" beforePath="C:\workspace\hospProject\target\classes\homepage\MainController.class" afterPath="C:\workspace\hospProject\target\classes\homepage\MainController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/homepage/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/homepage/MainController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/getData.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/getData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/js/getData.js" afterPath="$PROJECT_DIR$/target/classes/static/js/getData.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/mainPage.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/mainPage.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/mainPage.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/mainPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/mainPage.html" afterPath="$PROJECT_DIR$/target/classes/templates/mainPage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -38,35 +37,40 @@
       <file leaf-file-name="MainController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/homepage/MainController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.379311">
+              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1124#1157#0" expanded="true" />
-                <element signature="e#1219#1235#0" expanded="true" />
+                <element signature="e#1802#1818#0" expanded="true" />
+                <element signature="e#1898#1931#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hospitalData.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/hospitalData.csv">
+      <file leaf-file-name="dataVals.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/homepage/dataVals.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding>
+                <element signature="e#229#230#0" expanded="true" />
+                <element signature="e#285#286#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
+                <element signature="e#506#507#0" expanded="true" />
+                <element signature="e#556#557#0" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
+              </folding>
             </state>
-          </provider>
-          <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="mainPage.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mainPage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state vertical-scroll-proportion="-6.490909">
+              <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -75,8 +79,8 @@
       <file leaf-file-name="getData.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/getData.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6030405">
-              <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.47972974">
+              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -99,10 +103,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="CSS File" />
         <option value="Html5" />
         <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -131,8 +135,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/js/Chart.Bar.js" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/hello.txt" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/js/getData.js" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/mainPage.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/mainPage.css" />
+        <option value="$PROJECT_DIR$/src/main/java/homepage/dataVals.java" />
         <option value="$PROJECT_DIR$/src/main/java/homepage/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/mainPage.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/getData.js" />
       </list>
     </option>
@@ -401,6 +407,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -774,12 +784,12 @@
       <option name="number" value="Default" />
       <updated>1470131944649</updated>
       <workItem from="1470131947897" duration="18108000" />
-      <workItem from="1470206552412" duration="15374000" />
+      <workItem from="1470206552412" duration="30921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33482000" />
+    <option name="totallyTimeSpent" value="49029000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,7 +811,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.041044775" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32900432" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -845,8 +855,8 @@
           <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1124#1157#0" expanded="true" />
-            <element signature="e#1219#1235#0" expanded="true" />
+            <element signature="e#1802#1818#0" expanded="true" />
+            <element signature="e#1898#1931#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -930,14 +940,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7179054">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/bar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6307421">
@@ -946,10 +948,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/mainPage.css">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.25844595">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -964,10 +966,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hospitalData.csv">
+    <entry file="file://$PROJECT_DIR$/src/main/java/homepage/dataVals.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#229#230#0" expanded="true" />
+            <element signature="e#285#286#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#506#507#0" expanded="true" />
+            <element signature="e#556#557#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hospitalData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
           <folding />
         </state>
       </provider>
@@ -975,30 +993,38 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mainPage.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/homepage/MainController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state vertical-scroll-proportion="-12.379311">
+          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1802#1818#0" expanded="true" />
+            <element signature="e#1898#1931#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/mainPage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1773648">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/homepage/MainController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/mainPage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1124#1157#0" expanded="true" />
-            <element signature="e#1219#1235#0" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-6.490909">
+          <caret line="39" column="30" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/getData.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6030405">
-          <caret line="21" column="3" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.47972974">
+          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
           <folding />
         </state>
       </provider>

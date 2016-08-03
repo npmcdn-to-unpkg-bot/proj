@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.io.*;
 import java.util.*;
@@ -20,14 +22,21 @@ import java.util.*;
 @Controller
 public class MainController {
 
+
+
+
     private final String test = "Hello";
+    dataVals hospitalNaming = new dataVals();
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String home(Model model) {
 
-        System.out.print("aaa ");
-        csvRead();
+        HashMap hospitals = csvRead(model);
 
+        /*for ( String key : hospitalNaming.hospitalNames.keySet() ) {
+            System.out.println( key );
+        }
+*/
         return "mainPage";
     }
 
@@ -37,10 +46,22 @@ public class MainController {
         return "bar";
     }
 
-    public void csvRead() {
-        HashMap<String, HashMap<String, String>> hospitalNames = new HashMap<String, HashMap<String, String>>();
+    @RequestMapping(value = "/getData", method = RequestMethod.GET)
+    @ResponseBody String getData(@RequestParam("Hospital") String hospital, @RequestParam("Field") String field) {
+        //System.out.println(hospitalNaming.getHospData(hospital));
+        String specData = (hospitalNaming.getHospDataVals(hospital, field));
+        System.out.println(specData);
+
+        return "abc";
+    }
+
+    public HashMap csvRead(Model model) {
+
         HashMap<String, String> hospitalInfo = new HashMap<String, String>();
+        HashMap<String, HashMap<String, String>> hospitalNames = new HashMap<String, HashMap<String, String>>();
         try {
+
+
 
             BufferedReader reader = new BufferedReader(new InputStreamReader(
                     this.getClass().getResourceAsStream("/hospitalData.csv")));
@@ -52,15 +73,19 @@ public class MainController {
                 List<String> thisLine = Arrays.asList(line.split("\\|"));
                 String hospName = thisLine.get(0);
                 for (int i = 1; i < thisLine.size() ; i++) {
-                    hospitalInfo.put(headersLine.get(i),thisLine.get(i));
+                    hospitalInfo.put(headersLine.get(i), thisLine.get(i));
+
                 }
-                hospitalNames.put(hospName, hospitalInfo);
-                System.out.print(hospitalNames);
+                hospitalNames.put(hospName,hospitalInfo);
+                //System.out.print(hospitalNames);
             }
+            hospitalNaming.setHospNames(hospitalNames);
         }
         catch (IOException e){
             e.printStackTrace();
         }
+
+        return hospitalInfo;
     }
 
 }

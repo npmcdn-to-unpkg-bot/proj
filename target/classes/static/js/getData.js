@@ -3,23 +3,45 @@
  */
 $( document ).ready(function() {
 
-    console.log("hello");
 
     $('#Chemotherapy').click(function (){
-        $('#Chemotherapy').text('hello')
+        submitHospitalandField($('#Hospital').val(), $('#Field').val());
     });
 
-$(function () {
-    data = $.ajax({
-        types:"GET",
-        url: 'hospitalData.csv',
-        dataType: "text/csv",
-        success: function(text){
-            $data.text()
+    $('#Radiotherapy').click(function (){
+        submitHospitalandField($('#Hospital').val(), $('#Field').val());
+    });
 
+function submitHospitalandField(hospital, field) {
+    //var hospital =  $('#Hospital').val();
+    $.ajax({
+        types:"GET",
+        url: '/getData',
+        data: {"Hospital" : hospital , "Field" : field},
+        success: function(text){
+            $("#title").text(hospital);
+            /*alert(text);*/
         }
     })
-});
+};
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
 
 
 

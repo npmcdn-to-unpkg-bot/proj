@@ -4,7 +4,8 @@
     <meta charset="UTF-8"/>
     <title> Hospital Cancer Patient Data</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <!--<link href= "../static/css/mainPage.css" />-->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href= "../static/css/mainPage.css" />
 </head>
 <body>
 
@@ -12,22 +13,48 @@
     <h1 id = "title"> Hospital Cancer Patient Data </h1>
 </div>
 
-<div class = "button" id="Radiotherapy">
-    <button type="button" onclick="showFunction()"> Radiotherapy Patients</button>
+<!--<div class = "button" id="Radiotherapy">
+    <button type="button" > Radiotherapy Patients</button>
 </div>
 
 <div class = "button" >
     <button type="button" id="Chemotherapy"> Chemotherapy Patients</button>
+</div>-->
+
+<div class = "hosps">
+    <p> Hospital</p>
+    <input type = "text" id="Hospital"> </input>
 </div>
+
+<div class = "field">
+    <p>Field</p>
+    <input type = "text" id="Field"> </input>
+</div>
+
+<script>
+
+
+</script>
+
+<div class="container">
+        <div class="dropdown">
+        <ul class="dropdown-menu">
+            <li><a href="#Radiotherapy" id="Radiotherapy">Radiotherapy</a></li>
+            <li><a href="#Chemotherapy" id="Chemotherapy">Chemotherapy</a></li>
+        </ul>
+    </div>
+</div>
+
+
 
 <p id="demo">Hello there</p>
 
 <script type="text/javascript" src="../js/getData.js"> </script>
 
-<script>
+<!--<script>
     function showFunction() {
         document.getElementById("demo").innerHTML = "Hello JavaScript!";}
-</script>
+</script>-->
 
 </body>
 </html>
