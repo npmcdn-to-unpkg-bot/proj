@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8"/>
     <title> Hospital Cancer Patient Data</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <!--<link href= "../static/css/mainPage.css" />-->
 </head>
-
 <body>
 
 <div class = "topTitle">
@@ -16,16 +16,17 @@
     <button type="button" onclick="showFunction()"> Radiotherapy Patients</button>
 </div>
 
-<div class = "button" id="Chemotherapy">
-    <button type="button" onclick="showFunction()"> Chemotherapy Patients</button>
+<div class = "button" >
+    <button type="button" id="Chemotherapy"> Chemotherapy Patients</button>
 </div>
 
-<p id="demo"></p>
+<p id="demo">Hello there</p>
 
+<script type="text/javascript" src="../js/getData.js"> </script>
 
 <script>
     function showFunction() {
-        document.getElementById("demo").innerHTML = "Hello JavaScript!";;}
+        document.getElementById("demo").innerHTML = "Hello JavaScript!";}
 </script>
 
 </body>
