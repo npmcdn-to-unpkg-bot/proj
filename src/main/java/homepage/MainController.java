@@ -3,6 +3,7 @@ package homepage;
 /**
  * Created by 310247318 on 02/08/2016.
  */
+import org.json.simple.JSONObject;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -51,6 +52,14 @@ public class MainController {
         System.out.println(specData);
 
         return specData;
+    }
+
+    @RequestMapping(value = "/getGraph", method = RequestMethod.GET)
+    @ResponseBody String getGraph(@RequestParam("Field") String field) {
+        String specificData = (hospitalNaming.getDataAllHosp(field));
+        System.out.println(specificData);
+
+        return hospitalNaming.getDataAllHosp(field);
     }
 
     public HashMap csvRead(Model model) {

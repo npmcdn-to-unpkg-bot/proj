@@ -5,12 +5,19 @@
     <title> Hospital Cancer Patient Data</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src = "http://d3js.org/d3.v3.min.js"></script>
     <link href= "../static/css/mainPage.css" />
+    <style>
+        body {background-color: #e0e3e6;}
+        h1   {color: blue;}
+        p    {color: red;}
+    </style>
+
 </head>
 <body>
 
 <div class = "topTitle">
-    <h1 id = "title"> Hospital Cancer Patient Data </h1>
+    <h1 style="color:blue" id = "title"> Hospital Cancer Patient Data </h1>
 </div>
 
 <!--<div class = "button" id="Radiotherapy">
@@ -29,7 +36,8 @@
 
 
 
-<select id="Hospital" >
+<select id="Hospital"  >
+    <option value="0" id = "All" >All hospitals</option>
     <option value="1" id = "Leeds" >Leeds Teaching Hospitals NHS Trust</option>
     <option value="2" id = "Sheffield">Sheffield Teaching Hospitals NHS Foundation Trust</option>
     <option value="3" id = "Newcastle">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</option>
@@ -38,20 +46,35 @@
 </select>
 
 <select id="PatientFields" >
+    <!--<option value="d" id = "AllF">All fields</option>-->
     <option value="a" id = "RadioField" >Total Patients WITH Radiotherapy</option>
     <option value="b" id = "ChemoField">Total Patients WITH Chemotherapy</option>
     <option value="c" id = "CostField">Cost per patient</option>
-    <option value="d" id = "AvgStay">Average length of stay</option>
 </select>
+
 
 
 <p id="demo">Hello there</p>
 
+
+
+
+
+<svg width="50" height="50" id="circle1">
+    <circle cx="25" cy="25" r="25" fill="purple" />
+    </svg>
+
 <script type="text/javascript" src="../js/getData.js"> </script>
+
+
 <!--<script>
     function showFunction() {
         document.getElementById("demo").innerHTML = "Hello JavaScript!";}
 </script>-->
+
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+<script src="draw.js" ></script>
 
 </body>
 </html>
