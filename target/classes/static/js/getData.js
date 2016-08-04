@@ -3,17 +3,37 @@
  */
 $( document ).ready(function() {
 
+    var hospSelected = "Leeds Teaching Hospitals NHS Trust"
+    var fieldSelected = "Total Patients WITH Radiotherapy"
+    
+    $("#Hospital")
+        .change(function () {
+            $("select option:selected").each(function () {
+                var hospital = $("#Hospital").find(":selected").text();
+                var field = $("#PatientFields").find(":selected").text();
+                if (hospSelected !== hospital) {
+                    hospSelected = hospital
+                    submitHospitalandField(hospSelected, fieldSelected);
+                }
+            })
+        });
 
-    $('#Chemotherapy').click(function (){
-        submitHospitalandField($('#Hospital').val(), $('#Field').val());
-    });
 
-    $('#Radiotherapy').click(function (){
-        submitHospitalandField($('#Hospital').val(), $('#Field').val());
-    });
 
-function submitHospitalandField(hospital, field) {
-    //var hospital =  $('#Hospital').val();
+    $("#PatientFields")
+        .change(function () {
+            $("select option:selected").each(function () {
+                var field = $("#PatientFields").find(":selected").text();
+                if (fieldSelected !== field) {
+                    fieldSelected = field
+                    submitHospitalandField(hospSelected, fieldSelected);
+                }
+            })
+        });
+
+
+
+    function submitHospitalandField(hospital, field) {
     $.ajax({
         types:"GET",
         url: '/getData',
@@ -24,24 +44,6 @@ function submitHospitalandField(hospital, field) {
         }
     })
 };
-
-    function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
-                if (openDropdown.classList.contains('show')) {
-                    openDropdown.classList.remove('show');
-                }
-            }
-        }
-    }
 
 
 

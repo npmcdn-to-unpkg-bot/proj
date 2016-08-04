@@ -19,6 +19,7 @@ public class dataVals {
 
 
     public String getHospDataVals(String name, String field) {
+
     return hospitalNames.get(name).get(field);
     }
 

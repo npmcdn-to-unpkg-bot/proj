@@ -22,9 +22,6 @@ import java.util.*;
 @Controller
 public class MainController {
 
-
-
-
     private final String test = "Hello";
     dataVals hospitalNaming = new dataVals();
 
@@ -36,7 +33,9 @@ public class MainController {
         /*for ( String key : hospitalNaming.hospitalNames.keySet() ) {
             System.out.println( key );
         }
+
 */
+
         return "mainPage";
     }
 
@@ -48,11 +47,10 @@ public class MainController {
 
     @RequestMapping(value = "/getData", method = RequestMethod.GET)
     @ResponseBody String getData(@RequestParam("Hospital") String hospital, @RequestParam("Field") String field) {
-        //System.out.println(hospitalNaming.getHospData(hospital));
         String specData = (hospitalNaming.getHospDataVals(hospital, field));
         System.out.println(specData);
 
-        return "abc";
+        return specData;
     }
 
     public HashMap csvRead(Model model) {
@@ -70,15 +68,14 @@ public class MainController {
             String headers = reader.readLine();
             List<String> headersLine = Arrays.asList(headers.split("\\|"));
             while ((line = reader.readLine()) != null) {
+                hospitalInfo = new HashMap<String, String>();
                 List<String> thisLine = Arrays.asList(line.split("\\|"));
                 String hospName = thisLine.get(0);
                 for (int i = 1; i < thisLine.size() ; i++) {
                     hospitalInfo.put(headersLine.get(i), thisLine.get(i));
-
                 }
                 hospitalNames.put(hospName,hospitalInfo);
-                //System.out.print(hospitalNames);
-            }
+                }
             hospitalNaming.setHospNames(hospitalNames);
         }
         catch (IOException e){

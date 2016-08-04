@@ -21,36 +21,33 @@
     <button type="button" id="Chemotherapy"> Chemotherapy Patients</button>
 </div>-->
 
-<div class = "hosps">
+<!--<div class = "hosps">
     <p> Hospital</p>
     <input type = "text" id="Hospital"> </input>
-</div>
-
-<div class = "field">
-    <p>Field</p>
-    <input type = "text" id="Field"> </input>
-</div>
-
-<script>
+</div>-->
 
 
-</script>
 
-<div class="container">
-        <div class="dropdown">
-        <ul class="dropdown-menu">
-            <li><a href="#Radiotherapy" id="Radiotherapy">Radiotherapy</a></li>
-            <li><a href="#Chemotherapy" id="Chemotherapy">Chemotherapy</a></li>
-        </ul>
-    </div>
-</div>
 
+<select id="Hospital" >
+    <option value="1" id = "Leeds" >Leeds Teaching Hospitals NHS Trust</option>
+    <option value="2" id = "Sheffield">Sheffield Teaching Hospitals NHS Foundation Trust</option>
+    <option value="3" id = "Newcastle">The Newcastle Upon Tyne Hospitals NHS Foundation Trust</option>
+    <option value="4" id = "Gloucestershire">Gloucestershire Care Services NHS Trust</option>
+    <option value="5" id = "UCL">University College London Hospitals NHS Foundation Trust</option>
+</select>
+
+<select id="PatientFields" >
+    <option value="a" id = "RadioField" >Total Patients WITH Radiotherapy</option>
+    <option value="b" id = "ChemoField">Total Patients WITH Chemotherapy</option>
+    <option value="c" id = "CostField">Cost per patient</option>
+    <option value="d" id = "AvgStay">Average length of stay</option>
+</select>
 
 
 <p id="demo">Hello there</p>
 
 <script type="text/javascript" src="../js/getData.js"> </script>
-
 <!--<script>
     function showFunction() {
         document.getElementById("demo").innerHTML = "Hello JavaScript!";}
