@@ -60,38 +60,84 @@ $("#PatientFields")
             /*alert(text);*/
         }
     })
-};
+}
 
 
     function getGraph(field) {
         $.ajax({
             types:"GET",
             url: '/getGraph',
-            dataType: "text",
-            data: {"Field" : field, JSON : json},
-            success: function(text){
-                lineGraph(field, json)
+            datatype : "json",
+            data: {"Field" : field},
+            success: function(json2){
+                lineGraph(field, json2);
                 /*alert(text);*/
             }
         })
-    };
+    }
 
 
     function lineGraph(field, data){
 
+
+        var json = JSON.parse(data);
+
+        var dataList = json.d;
+
+        var dataInf = [];
+        var dataScaled = []
+
+        var jsonScaled = {};
+
+
         var svgContainer = d3.select("body").append("svg")
-            .attr("width", 200)
-            .attr("height", 200);
+            .attr("width", 500)
+            .attr("height", 500);
+
+        var x1 = d3.scale.linear()
+            .domain([0,6000])
+            .range([0,500]);
+
+        var y1 = d3.scale.linear()
+            .domain([6000,0])
+            .range([500,0]);
+
+
+        var xAxis = d3.svg.axis()
+            .scale(x1);
+
+        var yAxis = d3.svg.axis()
+            .scale(y1)
+            .orient("right");
+
+        for (i=0; i<json.d.length; i++) {
+            json.d[i].y = y1(json.d[i].y);
+        }
 
         var linefunction = d3.svg.line().x(function(d) {return d.x})
             .y(function(d) {return d.y})
-            .interpolate("Linear")
+            .interpolate("Linear");
 
-        var lineGraph = svgContainer.append("path")
-            .attr("d", linefunction(data))
+        var xAxisGroup = svgContainer.append("g")
+            .call(xAxis);
+
+        var yAxisGroup = svgContainer.append("g")
+            .call(yAxis);
+
+        var lineGraph = svgContainer
+            .append("path")
+            .attr("class", "x-axis")
+            .attr("class", "y-axis")
+            .attr("d", linefunction(dataList))
             .attr("stroke","blue")
             .attr("stroke-width", 2)
             .attr("fill", "none")
+            .call(xAxis)
+            .call(yAxis)
+            .append("g");
+
+
+
     }
 
 });

@@ -3,6 +3,7 @@ package homepage;
 import java.lang.reflect.Array;
 import java.util.*;
 
+import com.google.gson.Gson;
 import org.json.simple.JSONObject;
 
 
@@ -13,17 +14,6 @@ public class dataVals {
 
     public HashMap<String, HashMap<String, String>> hospitalNames;
 
-    public JSONObject getHospNames(){
-        JSONObject json = new JSONObject();
-        Set names = hospitalNames.keySet();
-        List sepNames = new ArrayList();
-        for (Object i :names) {
-            sepNames.add(i);
-        }
-        System.out.println(sepNames);
-        json.put("Names", sepNames);
-        return json;
-    }
 
     public String getHospData(String name) {
         return hospitalNames.get(name).toString();
@@ -41,9 +31,14 @@ public class dataVals {
     }
 
     public String getDataAllHosp(String field) {
+        Gson gson = new Gson();
         Set names = hospitalNames.keySet();
         List sepNames = new ArrayList();
         List finalFieldData = new ArrayList();
+        List<JSONObject> jsonList = new ArrayList<JSONObject>();
+        JSONObject jsonFin = new JSONObject();
+        int spacing = 100;
+
         int id = 0;
         for (Object i :names) {
             sepNames.add(i);
@@ -51,11 +46,17 @@ public class dataVals {
         for (Object i : sepNames) {
             JSONObject json = new JSONObject();
             String fieldData = getHospDataVals(i.toString(), field);
-            json.put(i.toString(), fieldData);
+            json.put("x", spacing);
+            json.put("y", Integer.parseInt(fieldData.replace(",","")));
+            jsonList.add(json);
             finalFieldData.add(json);
             id++;
+            spacing += 100;
         }
 
-        return finalFieldData.toString();
+        jsonFin.put("d", finalFieldData);
+        String jsonFinal = gson.toJson(jsonFin);
+
+        return jsonFinal;
     }
 }

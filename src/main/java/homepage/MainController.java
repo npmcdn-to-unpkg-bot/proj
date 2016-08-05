@@ -14,6 +14,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+
 import java.io.*;
 import java.util.*;
 
@@ -35,8 +37,10 @@ public class MainController {
             System.out.println( key );
         }
 
-*/
 
+
+*/
+        hospitalNaming.getDataAllHosp("Total Spells");
         return "mainPage";
     }
 
@@ -49,13 +53,14 @@ public class MainController {
     @RequestMapping(value = "/getData", method = RequestMethod.GET)
     @ResponseBody String getData(@RequestParam("Hospital") String hospital, @RequestParam("Field") String field) {
         String specData = (hospitalNaming.getHospDataVals(hospital, field));
-        System.out.println(specData);
+        //System.out.println(specData);
 
         return specData;
     }
 
     @RequestMapping(value = "/getGraph", method = RequestMethod.GET)
     @ResponseBody String getGraph(@RequestParam("Field") String field) {
+        System.out.println("hello");
         String specificData = (hospitalNaming.getDataAllHosp(field));
         System.out.println(specificData);
 
