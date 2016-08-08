@@ -20,14 +20,39 @@ public class dataVals {
     }
 
     public String getHospDataVals(String name, String field) {
-        //System.out.println(hospitalNames.get(name).get(field));
-
-        //System.out.println("Total Spells");
     return hospitalNames.get(name).get(field);
+    }
+
+    public JSONObject getHospNames()   {
+        Gson gson = new Gson();
+        JSONObject jsonFin = new JSONObject();
+        Set hospNames = hospitalNames.keySet();
+        ArrayList names = new ArrayList();
+        Iterator iter = hospNames.iterator();
+        while (iter.hasNext()) {
+            JSONObject json = new JSONObject();
+            json.put("name", iter.next());
+            names.add(json);
+        }
+        jsonFin.put("names", names);
+        return jsonFin;
+
     }
 
     public void setHospNames(HashMap hospName) {
         hospitalNames = hospName;
+    }
+
+    public int getMaxVal(String field){
+        Set names = hospitalNames.keySet();
+        int max = 0;
+        for (Object i :names) {
+            int temp = Integer.parseInt(getHospDataVals(i.toString(), field).replace(",",""));
+            if (temp > max) {
+                max = temp;
+            }
+        }
+        return max;
     }
 
     public String getDataAllHosp(String field) {
@@ -38,8 +63,8 @@ public class dataVals {
         List<JSONObject> jsonList = new ArrayList<JSONObject>();
         JSONObject jsonFin = new JSONObject();
         int spacing = 100;
-
         int id = 0;
+
         for (Object i :names) {
             sepNames.add(i);
         }
@@ -55,8 +80,9 @@ public class dataVals {
         }
 
         jsonFin.put("d", finalFieldData);
+        jsonFin.put("names", getHospNames());
+        jsonFin.put("max", getMaxVal(field));
         String jsonFinal = gson.toJson(jsonFin);
-
         return jsonFinal;
     }
 }

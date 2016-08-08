@@ -11,7 +11,9 @@
         body {background-color: #e0e3e6;}
         h1   {color: blue;}
         p    {color: red;}
+        select {margin: 2em;}
     </style>
+
 
 </head>
 <body>
@@ -20,21 +22,13 @@
     <h1 style="color:blue" id = "title"> Hospital Cancer Patient Data </h1>
 </div>
 
-<!--<div class = "button" id="Radiotherapy">
-    <button type="button" > Radiotherapy Patients</button>
-</div>
-
-<div class = "button" >
-    <button type="button" id="Chemotherapy"> Chemotherapy Patients</button>
-</div>-->
-
-<!--<div class = "hosps">
-    <p> Hospital</p>
-    <input type = "text" id="Hospital"> </input>
-</div>-->
-
-
-
+<select id="PatientFields" >
+    <!--<option value="d" id = "AllF">All fields</option>-->
+    <option value="a" id = "RadioField" >Total Patients WITH Radiotherapy</option>
+    <option value="b" id = "ChemoField">Total Patients WITH Chemotherapy</option>
+    <option value="c" id = "Spells">Total Spells</option>
+    <option value="d" id = "TotalPat">Total Cancer Patients</option>
+</select>
 
 <select id="Hospital"  >
     <option value="0" id = "All" >All hospitals</option>
@@ -45,25 +39,8 @@
     <option value="5" id = "UCL">University College London Hospitals NHS Foundation Trust</option>
 </select>
 
-<select id="PatientFields" >
-    <!--<option value="d" id = "AllF">All fields</option>-->
-    <option value="a" id = "RadioField" >Total Patients WITH Radiotherapy</option>
-    <option value="b" id = "ChemoField">Total Patients WITH Chemotherapy</option>
-    <option value="c" id = "CostField">Cost per patient</option>
-</select>
-
-
-
 <script type="text/javascript" src="../js/getData.js"> </script>
-
-
-<!--<script>
-    function showFunction() {
-        document.getElementById("demo").innerHTML = "Hello JavaScript!";}
-</script>-->
-
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-
 <script src="draw.js" ></script>
 
 </body>

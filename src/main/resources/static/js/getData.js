@@ -13,7 +13,7 @@ $( document ).ready(function() {
                 var field = $("#PatientFields").find(":selected").text();
                 if (hospital != "All hospitals") {
                     if (hospSelected !== hospital) {
-                        hospSelected = hospital
+                        hospSelected = hospital;
 
                         submitHospitalandField(hospSelected, fieldSelected);
                     }
@@ -42,7 +42,7 @@ $("#PatientFields")
                 if (fieldSelected !== field) {
                     fieldSelected = field;
                     submitHospitalandField(hospSelected, fieldSelected);
-                    getGraph(fieldSelected)
+                    getGraph(fieldSelected);
                 }
             }
         })
@@ -56,8 +56,7 @@ $("#PatientFields")
         url: '/getData',
         data: {"Hospital" : hospital , "Field" : field},
         success: function(text){
-            $("#title").text(hospital);
-            /*alert(text);*/
+            $("#title").text(hospital +"- " + field +": " +text);
         }
     })
 }
@@ -76,35 +75,37 @@ $("#PatientFields")
         })
     }
 
+    var svgContainer = d3.select("body").append("svg")
+        .attr("width", 1000)
+        .attr("height", 1000)
+        ;
+
 
     function lineGraph(field, data){
 
-
         var json = JSON.parse(data);
-
+        var hospNames = json.names;
         var dataList = json.d;
-
         var dataInf = [];
-        var dataScaled = []
-
+        var dataScaled = [];
         var jsonScaled = {};
+        var maximum = json.max;
+        var margin = {top: 20, right: 10, bottom: 20, left: 10};
+        var width = 960 - margin.left - margin.right,
+            height = 500 - margin.top - margin.bottom;
 
-
-        var svgContainer = d3.select("body").append("svg")
-            .attr("width", 500)
-            .attr("height", 500);
-
-        var x1 = d3.scale.linear()
-            .domain([0,6000])
-            .range([0,500]);
+        var x1 = d3.scale.ordinal()
+            .domain([0,100,200,300,400,500])
+            .range([0,100,200,300,400,500]);
 
         var y1 = d3.scale.linear()
-            .domain([6000,0])
+            .domain([maximum,0])
             .range([500,0]);
 
-
         var xAxis = d3.svg.axis()
-            .scale(x1);
+            .scale(x1)
+            .orient("bottom")
+            .tickValues(["", "UCL", "Leeds", "Sheffield", "Newcastle", "Gloucestershire"]);
 
         var yAxis = d3.svg.axis()
             .scale(y1)
@@ -118,24 +119,46 @@ $("#PatientFields")
             .y(function(d) {return d.y})
             .interpolate("Linear");
 
-        var xAxisGroup = svgContainer.append("g")
-            .call(xAxis);
+        var xAxisGroup = svgContainer
+            .call(xAxis)
+            .selectAll("text")
+            .style("text-anchor", "end")
+            .attr("dx", "-.8em")
+            .attr("transform", "rotate(-65)" );
 
         var yAxisGroup = svgContainer.append("g")
             .call(yAxis);
 
-        var lineGraph = svgContainer
-            .append("path")
-            .attr("class", "x-axis")
-            .attr("class", "y-axis")
-            .attr("d", linefunction(dataList))
-            .attr("stroke","blue")
-            .attr("stroke-width", 2)
-            .attr("fill", "none")
-            .call(xAxis)
-            .call(yAxis)
-            .append("g");
 
+
+        var lineGraph = svgContainer.selectAll("path")
+                .data(dataList)
+                .enter()
+                .append("path")
+                .attr("class", "x-axis")
+                .attr("class", "y-axis")
+                .attr("fill", "none")
+                .attr("d", linefunction(dataList))
+                .attr("stroke", "blue")
+                .attr("stroke-width", 2)
+            ;
+
+        update(dataList);
+        function update(dataList) {
+            var text = svgContainer.selectAll("path").data(dataList);
+            text.exit().attr("class", "exit").remove();
+            svgContainer.attr("class", "update")
+                .selectAll("path")
+                .data(dataList)
+                .append("path")
+                .attr("class", "x-axis")
+                .attr("class", "y-axis")
+                .attr("fill", "none")
+                .attr("d", linefunction(dataList))
+                .attr("stroke", "blue")
+                .attr("stroke-width", 2)
+            ;
+        }
 
 
     }

@@ -32,38 +32,25 @@ public class MainController {
     public String home(Model model) {
 
         HashMap hospitals = csvRead(model);
-
-        /*for ( String key : hospitalNaming.hospitalNames.keySet() ) {
-            System.out.println( key );
-        }
-
-
-
-*/
         hospitalNaming.getDataAllHosp("Total Spells");
         return "mainPage";
     }
 
     @RequestMapping(value = "/radiotherapy", method = RequestMethod.GET)
     public String radiotherapy(Model model) {
-        System.out.print("ccc");
         return "bar";
     }
 
     @RequestMapping(value = "/getData", method = RequestMethod.GET)
     @ResponseBody String getData(@RequestParam("Hospital") String hospital, @RequestParam("Field") String field) {
         String specData = (hospitalNaming.getHospDataVals(hospital, field));
-        //System.out.println(specData);
 
         return specData;
     }
 
     @RequestMapping(value = "/getGraph", method = RequestMethod.GET)
     @ResponseBody String getGraph(@RequestParam("Field") String field) {
-        System.out.println("hello");
         String specificData = (hospitalNaming.getDataAllHosp(field));
-        System.out.println(specificData);
-
         return hospitalNaming.getDataAllHosp(field);
     }
 
